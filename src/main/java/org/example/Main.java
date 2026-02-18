@@ -1,14 +1,20 @@
 package org.example;
 
 
-import java.sql.*;
-
 public class Main {
-    static void main() throws Exception{
 
 
-     EmployeeDAO dao = new EmployeeDAO();
-     dao.getEmployee(10);
+    public static void main(String[] args)
+            throws Exception {
+
+
+        UserDAO dao = new UserDAO();
+
+
+//        dao.insertUser(32, "Vadu");
+        dao.getAllUsers();
+
 
     }
+
 }

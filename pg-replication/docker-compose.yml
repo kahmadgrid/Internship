@@ -1,0 +1,36 @@
+#version: '3.8'
+
+services:
+
+  postgres-master:
+    image: postgres:15
+    container_name: postgres-master
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testdb
+    ports:
+      - "5437:5432"
+    volumes:
+      - ./master/data:/var/lib/postgresql/data
+      - ./master/init:/docker-entrypoint-initdb.d
+    networks:
+      - postgres-net
+
+  postgres-slave:
+    image: postgres:15
+    container_name: postgres-slave
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5436:5432"
+    volumes:
+      - ./slave/data:/var/lib/postgresql/data
+    networks:
+      - postgres-net
+
+networks:
+  postgres-net:
