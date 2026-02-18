@@ -1,0 +1,41 @@
+target/
+!master-slave/.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+
+pg-replication/master/data
+master-slave/pg-replication/slave/data
+### IntelliJ IDEA ###
+master-slave/.idea/modules.xml
+master-slave/.idea/jarRepositories.xml
+master-slave/.idea/compiler.xml
+master-slave/.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
